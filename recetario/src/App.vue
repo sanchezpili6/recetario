@@ -1,10 +1,25 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div class="container">
+    <div class="row align-items-start">
+      <div class="col-9">
+        <router-view/>
+      </div>
+      <div class="col">
+        <RecipesListComponent></RecipesListComponent>
+      </div>
+    </div>
+
   </div>
-  <router-view/>
 </template>
+
+<script>
+import RecipesListComponent from "@/components/RecipesListComponent";
+export default {
+  components:{
+    RecipesListComponent
+  }
+}
+</script>
 
 <style>
 #app {
