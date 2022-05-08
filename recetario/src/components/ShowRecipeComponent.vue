@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card main">
     <div class="card-body">
       <h5 class="card-title"><h1>{{name}}</h1></h5>
       <h6 class="card-subtitle mb-2 text-muted">
@@ -17,6 +17,9 @@
           <h6>{{ration.quantity}} {{ration.ingredient}}</h6>
         </li>
       </ul>
+      <div class="row align-items-start my-3">
+        <p>{{description}}</p>
+      </div>
       <div class="row align-items-start my-3">
         <div class="col">
           <router-link to="/Edit" style="text-decoration: none">
@@ -39,6 +42,7 @@ export default {
       name: 'Huevos Benedictinos',
       difficulty: 6,
       time: '30m',
+      description: 'Mezclar las yemas de huevo, el jugo de limón, agua, sal y una pizca de cayena en una licuadora. Mezclar hasta que esté esponjosa la mezcla, como 1 minuto. Después con la licuadora encendida añada la mantequilla derretida. Cheque si necesita más sal o jugo de limón.',
       rations: [
         {
           quantity: 2,
@@ -67,5 +71,12 @@ export default {
 </script>
 
 <style scoped>
+.main {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
 
 </style>
