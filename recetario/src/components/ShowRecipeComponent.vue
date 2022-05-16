@@ -8,7 +8,12 @@
             Tiempo: {{time}}
           </li>
           <li class="list-group-item">
-            Dificultad: {{difficulty}}
+            <div class="ratings">
+              Dificultad:
+              <svg v-for="rating in difficulty" :key="rating" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill rating-color" viewBox="0 0 16 16">
+                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+              </svg>
+            </div>
           </li>
         </ul>
       </h6>
@@ -40,7 +45,7 @@ export default {
   data:()=>{
     return{
       name: 'Huevos Benedictinos',
-      difficulty: 6,
+      difficulty: 3,
       time: '30m',
       description: 'Mezclar las yemas de huevo, el jugo de limón, agua, sal y una pizca de cayena en una licuadora. Mezclar hasta que esté esponjosa la mezcla, como 1 minuto. Después con la licuadora encendida añada la mantequilla derretida. Cheque si necesita más sal o jugo de limón.',
       rations: [
@@ -77,6 +82,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+.rating-color{
+  color:#fbc634 !important;
 }
 
 </style>

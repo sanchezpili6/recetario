@@ -1,8 +1,15 @@
 <template>
-  <div class="my-3">
-    <ul>
-      <li v-for="recipe in recipes" :key="recipe">{{ recipe.name }}</li>
-    </ul>
+  <div class="list-group my-3">
+    <h1>Recetas</h1>
+    <button
+        v-for="recipe in recipes"
+        :key="recipe"
+        type="button"
+        class="list-group-item list-group-item-action d-flex justify-content-between align-items-start"
+    >
+      {{ recipe.name }}
+      <span class="badge bg-primary rounded-pill">{{recipe.difficulty}}</span>
+    </button>
   </div>
 </template>
 
@@ -14,19 +21,23 @@ export default {
       recipes:[
         {
           name:'Huevos Benedictinos',
-          id: 1
+          id: 1,
+          difficulty: 6
         },
         {
           name:'Agua de pepino',
-          id: 2
+          id: 2,
+          difficulty: 2
         },
         {
           name:'Nicuatole',
-          id: 3
+          id: 3,
+          difficulty: 8
         },
         {
           name:'Tejate',
-          id: 4
+          id: 4,
+          difficulty: 10
         },
       ]
     }
