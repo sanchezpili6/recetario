@@ -18,6 +18,9 @@ export default {
   name: "RecipesListComponent.vue",
   data:()=>{
     return{
+      recetas:[
+
+      ],
       recipes:[
         {
           name:'Huevos Benedictinos',
