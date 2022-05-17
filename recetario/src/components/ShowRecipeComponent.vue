@@ -27,12 +27,10 @@
       </div>
       <div class="row align-items-start my-3">
         <div class="col">
-          <router-link to="/Edit" style="text-decoration: none">
-            <button type="button" class="btn btn-primary px-4">Editar</button>
-          </router-link>
+          <button @click="handleClick" type="button" class="btn btn-primary px-4">Editar</button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-danger">Eliminar</button>
+          <button @click="deleteReceta" type="button" class="btn btn-danger">Eliminar</button>
         </div>
       </div>
     </div>
@@ -40,11 +38,21 @@
 </template>
 
 <script>
+import {borrarReceta} from "@/components/recetasService";
+
 export default {
   name: "ShowRecipeComponent.vue",
   props: ['recipe'],
   data:()=>{
     return{
+    }
+  },
+  methods:{
+    handleClick() {
+      this.$router.replace('/Edit/?Id=' + this.recipe.id);
+    },
+    async deleteReceta(){
+      await borrarReceta(this.recipe.id).then(location.reload())
     }
   }
 }
