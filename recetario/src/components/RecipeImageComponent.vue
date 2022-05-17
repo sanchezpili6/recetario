@@ -1,8 +1,8 @@
 <template>
   <div class="image-container">
     <picture>
-      <source media="(max-width: 991px)" :srcset="recipeImage">
-      <img :src="recipeImage" width="360" height="180">
+      <source media="(max-width: 991px)" :srcset="recipe.url">
+      <img :src="recipe.url" width="360" height="180">
     </picture>
   </div>
 </template>
@@ -10,9 +10,9 @@
 <script>
 export default {
   name: "RecipeImageComponent.vue",
+  props: ['recipe'],
   data:()=>{
     return{
-      recipeImage: 'https://static01.nyt.com/images/2021/04/30/dining/ar-eggs-benedict/ar-eggs-benedict-articleLarge.jpg'
     }
   }
 }

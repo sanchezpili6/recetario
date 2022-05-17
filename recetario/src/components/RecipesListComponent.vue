@@ -6,6 +6,7 @@
         :key="recipe"
         type="button"
         class="list-group-item list-group-item-action d-flex justify-content-between align-items-start"
+        @click="$emit('change', recipe)"
     >
       {{ recipe.nombre }}
       <span class="badge bg-primary rounded-pill">{{recipe.dificultad}}</span>
